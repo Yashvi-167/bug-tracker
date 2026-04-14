@@ -4,7 +4,7 @@ const isPublicRoute = createRouteMatcher(["/", "/api/ingest/session(.*)"]);
 
 export default clerkMiddleware((auth, request) => {
   if (!isPublicRoute(request)) {
-    auth().protect();
+    auth.protect();
   }
 });
 
